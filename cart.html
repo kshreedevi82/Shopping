@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css"></head>
+        <body >
+            <section id="header">
+            
+                <a href="#"><img src="S:\Shopping\image\logo.jpg" width="100px" height="100px" alt="logo"></a>
+                <div>
+                    <ul id="navbar">
+                       
+                        <li><a  href="index.html">Home</a></li>
+                        <li><a  href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a  href="contact.html">Contact</a></li>
+                        <li><a class="active" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <div class="menu">
+                            <label for="chk1">
+                                <i class="fas fa-bars"></i>
+                            </label>
+                            
+                        </div>
+                        </li>
+            </section>
+            <section id="page-header">
+            
+                <h1> My Cart</h1>
+                
+                
+            </section>
+            <section id="cart" class="section-p1">
+                <table width="100%">
+                    <thead>
+<tr>
+    <td>Remove</td>
+    <td>Image</td>
+    <td>Product</td>
+    <td>Price</td>
+    <td>Quantity</td>
+    <td>Subtotal</td>
+</tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                            <td><img src="S:\Shopping\image\jumki2.jpg"></td>
+                            <td>Jumki</td>
+                            <td>200/-</td>
+                            <td><input type="number" value="1"></td>
+                            <td>200/-</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                            <td><img src="S:\Shopping\image\kurthi2.jpg"></td>
+                            <td>Kurthi</td>
+                            <td>700/-</td>
+                            <td><input type="number" value="1"></td>
+                            <td>700/-</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                            <td><img src="S:\Shopping\image\bag2.jpg"></td>
+                            <td>Bag</td>
+                            <td>400/-</td>
+                            <td><input type="number" value="1"></td>
+                            <td>400/-</td>
+                        </tr>
+                    </tbody>
+                </table>           
+            </section>
+            <section id="cart-add" class="section-p1">
+                <div id="coupon">
+                    <h3>Apply coupon</h3>
+                    <div>
+                        <input type="text" placeholder="Enter your coupon">
+                        <button class="normal">Apply</button>
+                    </div>
+                </div>
+                <div id="subtotal">
+                    <h3>Cart Total</h3>
+                    <table>
+                        <tr>
+                            <td>cart subtotal</td>
+                            <td>335/-</td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>335/-</td>
+                        </tr>
+                    </table>
+                    <button class="normal">Proceed to checkout</button>
+                </div>
+            </section>
+            <footer class="section-p1">
+                <div class="col">
+                <img src="S:\Shopping\image\logo.jpg" width="100px" height="100px">
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> Laksandra 15th cross,II main Bangalore</p>
+                <p><strong>Phone:</strong>+91 8765432197</p>
+                <p><strong>Hours:</strong>10.00-18.00 Mon-Sat</p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="icon">
+                        <a href=""><i class="fa-brands fa-facebook"></i></a>
+                                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h4>About</h4>
+                <a href="about.html">About Us</a>
+                <a href="#">Delivery information</a>
+                <a href="terms.html">Terms and conditions</a>
+                <a href="contact.html">Contact us</a>
+            </div>
+            <div class="install">
+                <h4>Install App</h4>
+                <p>From App Store or Google Play</p>
+                <div class="row">
+                    <img src="S:\Shopping\image\app.jpg" width="150px" height="50px">
+                    <img src="S:\Shopping\image\google.jpg" width="150px" height="50px">
+                </div>
+                </div><br>
+                <div class="Copyright">
+                    <p><strong>Copyright:</strong>2022,Tech2 etc-HTML css Ecommerce Template</p>
+                </div>
+            </footer>
+            <script>
+                import{createSlice}from "Qreduxjs/toolkit";
+                const initialState={
+                    cartItems:[],
+                    cartTotalQuantity:0,
+                    cartTotalAmount:0
+                }
+                const cartSlice=createSlice({
+                    name:"cart",
+                    initialState,
+                    reducers:{
+                        addToCart(state,action){
+state.cartItems.push(action.payload);
+                        },
+                    },
+                })
+                export const {addToCart}=cartSlice.actions;
+            </script>
+            </body>
+    </html>
